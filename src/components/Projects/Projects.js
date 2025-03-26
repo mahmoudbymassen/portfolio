@@ -6,7 +6,7 @@ import ecom from "../../Assets/Projects/ecom.png"
 import managment from "../../Assets/Projects/managment.png";
 import resume from "../../Assets/Projects/resume.png";
 import chatify from "../../Assets/Projects/chatify.png";
-import station from "../../Assets/Projects/";
+import station from "../../Assets/Projects/station.png";
 
 
 function Projects() {
