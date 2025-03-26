@@ -70,7 +70,7 @@ function Projects() {
               isBlog={false}
               title="station managment"
               description="Skilled developer who built a gas station management system in 2025 using React, Node.js, Express, and MongoDB. This web application optimizes stock, employee, and sales management with role-based access, showcasing my expertise in full-stack development and problem-solving ."
-              ghLink="https://github.com/mahmoudbymassen/Resume"
+              ghLink="https://github.com/mahmoudbymassen/station-managment"
 
             />
           </Col>
