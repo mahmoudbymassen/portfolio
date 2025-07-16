@@ -6,6 +6,7 @@ import ecom from "../../Assets/Projects/ecom.png"
 import managment from "../../Assets/Projects/managment.png";
 import resume from "../../Assets/Projects/resume.png";
 import chatify from "../../Assets/Projects/chatify.png";
+import station from "../../Assets/Projects/station.png";
 
 
 function Projects() {
@@ -60,6 +61,16 @@ function Projects() {
               title="Resume Creator"
               description="Developed a user-friendly Resume Creator web application using React.js to help users build professional resumes effortlessly. The application allows users to input their personal, educational, and professional details, which are dynamically rendered into a well-structured and visually appealing resume template."
               ghLink="https://github.com/mahmoudbymassen/Resume"
+
+            />
+          </Col>
+                <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={station}
+              isBlog={false}
+              title="station managment"
+              description="Skilled developer who built a gas station management system in 2025 using React, Node.js, Express, and MongoDB. This web application optimizes stock, employee, and sales management with role-based access, showcasing my expertise in full-stack development and problem-solving ."
+              ghLink="https://github.com/mahmoudbymassen/station-managment"
 
             />
           </Col>
