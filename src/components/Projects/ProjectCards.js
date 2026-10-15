@@ -1,40 +1,49 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import { CgWebsite } from "react-icons/cg";
-import { BsGithub } from "react-icons/bs";
+import { FiArrowUpRight, FiMonitor } from "react-icons/fi";
 
-function ProjectCards(props) {
+function ProjectCards({
+  title,
+  description,
+  technologies,
+  ghLink,
+  image,
+  imageAlt,
+  visualKind,
+  visualLabel,
+  icon: VisualIcon = FiMonitor,
+}) {
   return (
-    <Card className="project-card-view">
-      <Card.Img variant="top" src={props.imgPath} alt="card-img" />
-      <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text style={{ textAlign: "justify" }}>
-          {props.description}
-        </Card.Text>
-        <Button variant="primary" href={props.ghLink} target="_blank">
-          <BsGithub /> &nbsp;
-          {props.isBlog ? "Blog" : "GitHub"}
-        </Button>
-        {"\n"}
-        {"\n"}
-
-        {/* If the component contains Demo link and if it's not a Blog then, it will render the below component  */}
-
-        {!props.isBlog && props.demoLink && (
-          <Button
-            variant="primary"
-            href={props.demoLink}
-            target="_blank"
-            style={{ marginLeft: "10px" }}
-          >
-            <CgWebsite /> &nbsp;
-            {"Demo"}
-          </Button>
+    <article className="project-tile">
+      <div className={`project-tile-visual${image ? " project-tile-visual--image" : ` project-tile-visual--${visualKind}`}`}>
+        {image ? (
+          <img src={image} alt={imageAlt} />
+        ) : (
+          <div className="project-illustration" aria-hidden="true">
+            <VisualIcon />
+            <span>{visualLabel}</span>
+          </div>
         )}
-      </Card.Body>
-    </Card>
+        {!image && <span className="project-visual-label">{visualLabel}</span>}
+      </div>
+      <div className="project-tile-body">
+        <h3>{title}</h3>
+        <p>{description}</p>
+        <div className="project-tech-list" aria-label={`${title} technologies`}>
+          {technologies.map((technology) => (
+            <span className="project-tech" key={technology}>{technology}</span>
+          ))}
+        </div>
+        <a
+          className="project-link"
+          href={ghLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View on GitHub <FiArrowUpRight aria-hidden="true" />
+        </a>
+      </div>
+    </article>
   );
 }
+
 export default ProjectCards;

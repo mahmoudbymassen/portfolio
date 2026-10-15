@@ -1,92 +1,70 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../Assets/avatar.svg";
-import Tilt from "react-parallax-tilt";
-import {
-  AiFillGithub,
+import { FaServer, FaNetworkWired, FaShieldAlt, FaLaptopCode } from "react-icons/fa";
+import { FiArrowRight } from "react-icons/fi";
 
-} from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
+const focusAreas = [
+  {
+    title: "Systems Administration",
+    text: "Linux and Windows Server administration, virtualization, and service continuity planning.",
+    icon: <FaServer />,
+  },
+  {
+    title: "Networking",
+    text: "TCP/IP, VLANs, DNS, DHCP, routing, and network diagnosis for reliable communication flows.",
+    icon: <FaNetworkWired />,
+  },
+  {
+    title: "Monitoring & Security",
+    text: "Network analysis, firewall fundamentals, and security awareness in lab environments.",
+    icon: <FaShieldAlt />,
+  },
+  {
+    title: "Practical Development",
+    text: "React, FastAPI, and infrastructure-focused tooling to support monitoring and automation.",
+    icon: <FaLaptopCode />,
+  },
+];
 
 function Home2() {
   return (
     <Container fluid className="home-about-section" id="about">
-      <Container>
-        <Row>
-          <Col md={8} className="home-about-description">
-            <h1 style={{ fontSize: "2.6em" }}>
-              LET ME <span className="purple"> INTRODUCE </span> MYSELF
-            </h1>
+      <Container className="content-shell">
+        <Row className="about-grid align-items-center">
+          <Col lg={7} className="home-about-description">
+            <div className="section-tag">About me</div>
+            <h2>
+              Infrastructure-minded, <span className="accent-text">network-focused</span>, and ready to contribute.
+            </h2>
             <p className="home-about-body">
-              I fell in love with programming and I have at least learnt
-              something, I think… 🤷‍♂️
-              <br />
-              <br />I am fluent in classics like
-              <i>
-                <b className="purple"> PHP, JAVASCRIPT and SQL. </b>
-              </i>
-              <br />
-              <br />
-              My field of Interest's are building new &nbsp;
-              <i>
-                <b className="purple">Web Technologies and Products. </b> 
-              </i>
-              <br />
-              <br />
-              Whenever possible, I also apply my passion for developing products
-              with <b className="purple">PHP</b> and<b className="purple"> JAVASCRIPT</b>,
-              <i>
-                <b className="purple">
-                  {" "}
-                    Library and Frameworks
-                </b>
-              </i>
-              &nbsp; like
-              <i>
-                <b className="purple"> React.js and Laravel</b>
-              </i>
+              I hold a Professional Bachelor&apos;s degree in Computer Systems and Networks Engineering and a Specialized Technician diploma in Full Stack Web Development. My background combines practical IT operations with software development, which helps me understand both infrastructure challenges and the applications that depend on them.
             </p>
-          </Col>
-          <Col md={4} className="myAvtar">
-            <Tilt>
-              <img src={myImg} className="img-fluid" alt="avatar" />
-            </Tilt>
-          </Col>
-        </Row>
-        <Row>
-          <Col md={12} className="home-about-social">
-            <h1>FIND ME ON</h1>
-            <p>
-              Feel free to <span className="purple">connect </span>with me
+            <p className="home-about-body">
+              I am especially interested in system administration, troubleshooting, monitoring, and automation. I enjoy analyzing how networks, servers, and services work together, and I apply development skills to build tools that support better visibility and operational control.
             </p>
-            <ul className="home-about-social-links">
-              <li className="social-icons">
-                <a
-                  href="https://github.com/mahmoudbymassen"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <AiFillGithub />
-                </a>
-              </li>
-              
-              <li className="social-icons">
-                <a
-                  href="https://www.linkedin.com/in/mahmoud-bymassen-001b6b33b/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <FaLinkedinIn />
-                </a>
-              </li>
-              
-            </ul>
+            <div className="mini-cta">
+              <span>Open to opportunities</span>
+              <a href="mailto:mahmoudbymassen1@gmail.com">Contact me <FiArrowRight /></a>
+            </div>
+          </Col>
+
+          <Col lg={5} className="focus-panel">
+            <div className="focus-list">
+              {focusAreas.map((item) => (
+                <div className="focus-card" key={item.title}>
+                  <div className="focus-icon">{item.icon}</div>
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </Col>
         </Row>
       </Container>
     </Container>
   );
 }
+
 export default Home2;
