@@ -5,7 +5,6 @@ import {
   DiJavascript1,
   DiReact,
   DiMongodb,
-  DiPython,
   DiPhp,
   DiCss3,
   DiHtml5,
@@ -17,7 +16,6 @@ import {
 
 import { 
   SiExpress, 
-  SiPostgresql, 
   SiMysql,
   SiGithub 
 } from "react-icons/si";
